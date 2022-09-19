@@ -24,6 +24,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./docker/stage/nginx.Dockerfile
+          file: ./docker/prod/nginx.Dockerfile
           push: true
           tags: osama10dev/test-portainer:0.1.${{ github.run_number }}
