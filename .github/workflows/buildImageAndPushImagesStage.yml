@@ -30,7 +30,7 @@ jobs:
 
       - name: update the stack
         env:
-          IMAGE: test-portainer:0.1.${{ github.run_number }}
+          IMAGE: osama10dev/test-portainer:0.1.${{ github.run_number }}
         run: |
           sed -i "s/osama/$IMAGE/g" docker/prod/swarm/docker-compose.yml
           git config --global user.name "github"
