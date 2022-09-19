@@ -27,3 +27,6 @@ jobs:
           file: ./docker/prod/nginx.Dockerfile
           push: true
           tags: osama10dev/test-portainer:0.1.${{ github.run_number }}
+
+      - name: update the stack
+        run: sed -i "s/%%%image%%%/osama10dev/test-portainer:0.1.${{ github.run_number }}/g" docker/prod/swarm/docker-compose.yml
