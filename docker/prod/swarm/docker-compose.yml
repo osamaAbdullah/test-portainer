@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  nginx-react:
+    image: 'osama10dev/test-portainer'
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
