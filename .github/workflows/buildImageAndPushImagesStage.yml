@@ -32,6 +32,7 @@ jobs:
         env:
           IMAGE: osama10dev/test-portainer:0.1.${{ github.run_number }}
         run: |
+          OLD_IMAGE=$(cat docker/prod/oldImage)
           sed -i "s/osama/$IMAGE/g" docker/prod/swarm/docker-compose.yml
           echo $IMAGE > docker/prod/oldImage
           git config --global user.name "github"
