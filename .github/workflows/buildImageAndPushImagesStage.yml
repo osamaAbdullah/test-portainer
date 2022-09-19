@@ -28,13 +28,14 @@ jobs:
           push: true
           tags: osama10dev/test-portainer:0.1.${{ github.run_number }}
 
-#      - name: update the stack
-#        env:
-#          IMAGE: osama10dev/test-portainer:0.1.${{ github.run_number }}
-#        run: |
-#          sed -i "s/osama/$IMAGE/g" docker/prod/swarm/docker-compose.yml
-#          git config --global user.name "github"
-#          git config --global user.email "github@action.com"
-#          git add docker/prod/swarm/docker-compose.yml
-#          git commit -m "image updated"
-#          git push
+      - name: update the stack
+        env:
+          IMAGE: osama10dev/test-portainer:0.1.${{ github.run_number }}
+        run: |
+          sed -i "s/osama/$IMAGE/g" docker/prod/swarm/docker-compose.yml
+          echo $IMAGE > docker/prod/oldImage
+          git config --global user.name "github"
+          git config --global user.email "github@action.com"
+          git add .
+          git commit -m "stack updated"
+          git push
