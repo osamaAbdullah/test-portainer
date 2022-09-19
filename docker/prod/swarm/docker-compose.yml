@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   nginx-react:
-    image: 'osama10dev/test-portainer:0.1.16'
+    image: 'osama10dev/test-portainer:0.1.17'
     ports:
       - "80:80"
     deploy:
