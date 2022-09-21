@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Sarah hate react but love vue and only Vue
+          Osama hate react but love vue and only Vue
         </p>
       </header>
     </div>
